@@ -11,6 +11,7 @@ describe("Login", () => {
     cy.get("#password").type("Password123");
     // cy.get('#password').type("19092545Boat")
     // cy.get("#remember-user-drawer-checkbox").click();
+    cy.wait(10000)
     cy.get("#setup-user-drawer-submit").click();
     // cy.get("h1").should("contain", "Overview");
     cy.screenshot();
@@ -81,6 +82,7 @@ describe("Login", () => {
         cy.get(" #username").type("Username0@#413212321");
         cy.get(" #password").type("pass");
         //  cy.get("#remember-user-drawer-checkbox").click();
+        cy.wait(10000)
         cy.get("#setup-user-drawer-submit").click();
         cy.contains(`username must match`).should("exist");
         cy.screenshot();
