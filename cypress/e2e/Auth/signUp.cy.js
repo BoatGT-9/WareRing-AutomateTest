@@ -137,27 +137,6 @@ describe("SignUp", () => {
     cy.contains("Confirm password should be the same password").should("exist");
     cy.screenshot();
   });
-
-  // ไมม่ได้กร
-  // it("sign up to fail password not match pattern", () => {
-  //   cy.visit(BASE_URL);
-
-  //   cy.get(`.border-r-\\[\\#20476b\\]`).click();
-  //   cy.get("div:nth-child(1) > .relative > #username").type(`usernameTest`);
-  //   cy.get("div:nth-child(1) > .relative > #firstName").type("firstName");
-  //   cy.get("div:nth-child(1) > .relative > #lastName").type("lastName");
-  //   cy.get("div:nth-child(1) > .relative > #email").type(
-  //     `emailTest${new Date().getSeconds()}@test.com`
-  //   );
-  //   cy.get("div:nth-child(1) > .relative > #password").type(`Passwrod1234`);
-  //   cy.get("div:nth-child(1) > .relative > #confirm_password").type(
-  //     `Passwrod123433`
-  //   );
-
-  //   cy.get("#accept-term-btn").click();
-  //   cy.get("div:nth-child(1) > #setup-user-submit").click();
-
-  //   cy.contains("Confirm password should be the same password").should("exist");
-  //   cy.screenshot();
-  // });
+  
 });
+
