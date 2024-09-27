@@ -1,14 +1,14 @@
 ///<reference types="cypress" />
 import { user1 } from "../../fixtures/User.json";
 
-const BASE_URL = "http://warering.online/";
+const BASE_URL = "http://localhost:5173/";
 describe("Login", () => {
   it("login to webpage success fully", () => {
     cy.visit(BASE_URL);
     cy.get("#toggle-big-login-landing-drawer-btn").click();
     cy.get("#username").click();
-    cy.get("#username").type("ken");
-    cy.get("#password").type("Password123");
+    cy.get("#username").type("boat");
+    cy.get("#password").type("19092545Boat");
     // cy.get('#password').type("19092545Boat")
     // cy.get("#remember-user-drawer-checkbox").click();
     cy.wait(10000)
@@ -20,8 +20,8 @@ describe("Login", () => {
   it("Login to fail when not verify email", () => {
     cy.visit(BASE_URL);
     cy.get("#toggle-big-login-landing-drawer-btn").click();
-    cy.get(" #username").type("boat");
-    cy.get(" #password").type(`19092545Boat`);
+    cy.get(" #username").type("userName40");
+    cy.get(" #password").type("Password1234");
   // cy.get("#remember-user-drawer-checkbox").click();
   cy.get("#setup-user-drawer-submit").click();
     cy.contains("Please verify your e-mail first").should("exist");
@@ -32,7 +32,7 @@ describe("Login", () => {
   it("Login to fail when password is incorrect", () => {
     cy.visit(BASE_URL);
     cy.get("#toggle-big-login-landing-drawer-btn").click();
-    cy.get(" #username").type(`ken`);
+    cy.get(" #username").type(`boat`);
     cy.get(" #password").type(`fkfkfkfk`);
   // cy.get("#remember-user-drawer-checkbox").click();
   cy.get("#setup-user-drawer-submit").click();
@@ -88,17 +88,5 @@ describe("Login", () => {
         cy.screenshot();
       });
 
-      // // รีรหัสผ่าน
-      // it("Login to fail when password is incorrect to reset password",()=>{
-      //   cy.visit(BASE_URL);
-      //   cy.contains("Sign In").click();
-      //   cy.get("div:nth-child(1) > .relative > #username").type(`${user1.username}`);
-      //   cy.get("div:nth-child(1) > .relative > #password").type(`fkfkfkfk`);
-      //   cy.get("div:nth-child(1) > #setup-user-submit").click();
-      //   cy.get("div:nth-child(1) > .flex #forget-pass-btn").click();
-      //   cy.get("#email_forget_password").type(`${user1.email}`);
-      //   // cy.get("forget-pass-submit").click();
-    
-      // })
     });
     
