@@ -40,18 +40,18 @@ describe("widget in device", () => {
     cy.contains("Your widget was delete").should("be.visible");
     cy.screenshot();
   });
-
+  
   it("TC5004 not have label", () => {
     login("boat", "19092545Boat");
     cy.get("#devices-nav-link-sidebar").click();
     cy.contains("Sensor_01").click();
     cy.get("#toggle-add-widget-dialog-btn").click();
     cy.get("#select_widget").select("MessageBox");
-    cy.get("#label").type("อุณหภูมิ")
-    // cy.get("#value").type("ความร้อน");
+    // cy.get("#label").type("อุณหภูมิ")
+    cy.get("#value").type("ความร้อน");
     cy.get("#unit").type("องศา");
     cy.get("#add-widget-submit-btn").click();
-    cy.contains("Please provide a value").should("exist");
+    cy.contains("label is required").should("exist");
     cy.screenshot();
   });
 
@@ -61,19 +61,10 @@ describe("widget in device", () => {
     cy.contains("Sensor_01").click();
     cy.get("#toggle-add-widget-dialog-btn").click();
     cy.get("#select_widget").select("MessageBox");
-    cy.get("#label").type("อุณหภูมิ");
-                                                                             
+    cy.get("#label").type("อุณหภูมิ");                                                                 
     cy.get("#unit").type("องศา");
     cy.get("#add-widget-submit-btn").click();
-    cy.contains("Please provide a value").should("exist");
+    cy.contains("value is required").should("exist");
     cy.screenshot();
-  });
-
-  it("TC5006 not have Unit", () => {
-    login("boat", "19092545Boat");
-    cy.get("#devices-nav-link-sidebar").click();
-    cy.contains("Sensor_01").click();
-    cy.get("#toggle-add-widget-dialog-btn").click();
-    
   });
 });
