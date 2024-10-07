@@ -127,7 +127,7 @@ describe("Device", () => {
     cy.get("#Qos").type("0");
     cy.get("#retain-checkbox").click();
     cy.get("#add-device-submit-btn").click();
-    cy.contains("Please provide all value").should("exist");
+    cy.contains("username of device is required").should("exist");
       cy.screenshot();
   });
 
@@ -146,7 +146,7 @@ describe("Device", () => {
     cy.get("#Qos").type("0");
     cy.get("#retain-checkbox").click();
     cy.get("#add-device-submit-btn").click();
-    cy.contains("Please provide all value").should("exist");
+    cy.contains("name of device is required").should("exist");
       cy.screenshot();
   });
 
@@ -165,7 +165,7 @@ describe("Device", () => {
     cy.get("#Qos").type("0");
     cy.get("#retain-checkbox").click();
     cy.get("#add-device-submit-btn").click();
-    cy.contains("Please provide all value").should("exist");
+    cy.contains("password of device is required").should("exist");
     cy.screenshot();
   });
 
@@ -184,7 +184,7 @@ describe("Device", () => {
     cy.get("#Qos").type("0");
     cy.get("#retain-checkbox").click();
     cy.get("#add-device-submit-btn").click();
-    cy.contains("Please provide all value").should("exist");
+    cy.contains("topic of device is required").should("exist");
     cy.screenshot();
   });
 
